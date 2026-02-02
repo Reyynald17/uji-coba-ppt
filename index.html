@@ -1,110 +1,28 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <title>Demo jQuery Lengkap</title>
+    <meta charset="UTF-8">
+    <title>jQuery Sederhana</title>
 
-  <!-- CDN jQuery -->
-  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <!-- Panggil jQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      padding: 20px;
-    }
-
-    button {
-      margin: 4px 0;
-      padding: 8px 12px;
-      cursor: pointer;
-    }
-
-    #box {
-      width: 150px;
-      height: 150px;
-      background: steelblue;
-      margin: 15px 0;
-    }
-  </style>
+    <!-- Script jQuery -->
+    <script>
+        $(document).ready(function () {
+            $("#btn").click(function () {
+                $("#teks").text("Teks ini berubah dengan jQuery!");
+            });
+        });
+    </script>
 </head>
 <body>
 
-  <h2>Demo jQuery (Event, Efek, Animasi)</h2>
+    <p id="teks">Ini teks awal</p>
+    <button id="btn">Klik saya</button>
 
-  <!-- EVENT CLICK -->
-  <button id="btnClick">Event Click</button>
-
-  <!-- EFEK & ANIMASI -->
-  <button id="btnHide">Hide</button>
-  <button id="btnShow">Show</button>
-  <button id="btnFade">Fade</button>
-  <button id="btnSlide">Slide</button>
-  <button id="btnAnimate">Animasi Kustom</button>
-
-  <!-- BOX -->
-  <div id="box"></div>
-
-  <script>
-    $(document).ready(function () {
-
-      // =====================
-      // EVENT CLICK
-      // =====================
-      $("#btnClick").click(function () {
-        alert("Tombol event click ditekan!");
-      });
-
-      // =====================
-      // EVENT HOVER
-      // =====================
-      $("#box").hover(
-        function () {
-          $(this).css("background", "orange");
-        },
-        function () {
-          $(this).css("background", "steelblue");
-        }
-      );
-
-      // =====================
-      // EFEK DASAR
-      // =====================
-      $("#btnHide").click(function () {
-        $("#box").hide();
-      });
-
-      $("#btnShow").click(function () {
-        $("#box").show();
-      });
-
-      // =====================
-      // FADE
-      // =====================
-      $("#btnFade").click(function () {
-        $("#box").fadeToggle();
-      });
-
-      // =====================
-      // SLIDE
-      // =====================
-      $("#btnSlide").click(function () {
-        $("#box").slideToggle();
-      });
-
-      // =====================
-      // ANIMASI KUSTOM
-      // =====================
-      $("#btnAnimate").click(function () {
-        $("#box").animate({
-          width: "300px",
-          opacity: 0.5
-        }, 1000).animate({
-          width: "150px",
-          opacity: 1
-        }, 1000);
-      });
-
-    });
+</body>
+</html>    });
   </script>
 
 </body>
